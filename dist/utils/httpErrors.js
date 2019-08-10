@@ -27,4 +27,11 @@ class HTTP404Error extends HTTPClientError {
     }
 }
 exports.HTTP404Error = HTTP404Error;
+class HTTP422Error extends HTTPClientError {
+    constructor(message = "Validation Failed") {
+        super(message);
+        this.statusCode = 422;
+    }
+}
+exports.HTTP422Error = HTTP422Error;
 //# sourceMappingURL=httpErrors.js.map

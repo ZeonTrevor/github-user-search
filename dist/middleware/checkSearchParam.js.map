@@ -1,0 +1,1 @@
+{"version":3,"file":"checkSearchParam.js","sourceRoot":"","sources":["../../src/middleware/checkSearchParam.ts"],"names":[],"mappings":";;AACA,oDAAmD;AAEtC,QAAA,iBAAiB,GAAG,CAChC,GAAY,EACZ,GAAa,EACb,IAAkB,EACjB,EAAE;IAEH,IAAG,CAAC,GAAG,CAAC,KAAK,CAAC,QAAQ,EAAE;QACvB,MAAM,IAAI,yBAAY,CAAC,8BAA8B,CAAC,CAAC;KACvD;SACI;QACJ,IAAI,EAAE,CAAC;KACP;AACF,CAAC,CAAC"}

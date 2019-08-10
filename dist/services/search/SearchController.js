@@ -15,6 +15,7 @@ const request_promise_1 = __importDefault(require("request-promise"));
 const dotenv_1 = __importDefault(require("dotenv"));
 const parse_link_header_1 = __importDefault(require("parse-link-header"));
 const errors_1 = __importDefault(require("request-promise/errors"));
+const httpErrors_1 = require("../../utils/httpErrors");
 dotenv_1.default.config();
 exports.getUserInfo = (user_uri) => __awaiter(this, void 0, void 0, function* () {
     const key = process.env.GITHUB_AUTH_TOKEN;
@@ -65,8 +66,7 @@ exports.getUsersByLanguageAndPage = (language, page) => __awaiter(this, void 0, 
     };
     const response = yield request_promise_1.default(options).catch(errors_1.default.StatusCodeError, function (reason) {
         //This error captures invalid language parameters
-        console.log(reason.statusCode);
-        console.log(reason.error);
+        throw new httpErrors_1.HTTP422Error(reason.error + "\n");
     });
     return response;
 });

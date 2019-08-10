@@ -4,6 +4,7 @@ import dotenv from "dotenv";
 import parse from "parse-link-header";
 import errors from "request-promise/errors";
 import Writable from "stream";
+import { HTTP422Error } from "../../utils/httpErrors";
 
 dotenv.config();
 
@@ -16,6 +17,7 @@ export const getUserInfo = async (user_uri: string) => {
 					 uri: user_uri,
 					 json: true
 					};
+
 	const response = await request(options).catch(errors.RequestError, function(reason) {
 		console.log(reason.error);
 		return {};
@@ -64,8 +66,7 @@ export const getUsersByLanguageAndPage = async (language: string, page: string) 
 					};
 	const response = await request(options).catch(errors.StatusCodeError, function(reason) {
 		//This error captures invalid language parameters
-		console.log(reason.statusCode);
-		console.log(reason.error);
+		throw new HTTP422Error(reason.error + "\n");
 	});
 	return response;
 }
