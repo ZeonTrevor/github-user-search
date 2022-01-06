@@ -22,7 +22,7 @@
     "cors": "^2.8.5",
     "dotenv": "^8.0.0",
     "express": "^5.0.0-alpha.7",
-    "parse-link-header": "^1.0.1",
+    "parse-link-header": "^2.0.0",
     "request": "^2.88.0",
     "request-promise": "^4.2.4",
     "tsc-watch": "^2.2.1",
